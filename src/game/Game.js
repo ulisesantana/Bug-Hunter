@@ -1,15 +1,21 @@
 const PlayerCharacter = require('./PlayerCharacter');
 const NonPlayerCharacter = require('./NonPlayerCharacter');
 const EventEmitter = require('events');
+const render = require('./render');
+
+console.reset = function () {
+  return process.stdout.write('\033c');
+}
 
 module.exports = class Game {
-    constructor(playerName, numberOfNpc){
-        this.player = new PlayerCharacter(1, playerName);
+    constructor(heroName, numberOfBugs){
+        this.player = new PlayerCharacter(1, heroName);
         this.npcs = [];
-        for(let i = 2; i < numberOfNpc+2; i++){
+        for(let i = 2; i < numberOfBugs+2; i++){
             this.npcs.push(new NonPlayerCharacter(i, `Bug_${i}`));
         }
         this.gameLife = new EventEmitter();
+        this.render = render;
     }
     
     changeNpcDirections(){
@@ -22,6 +28,7 @@ module.exports = class Game {
     }
 
     logPositions(){
+        this.render(this.player,this.npcs);
         this.player.logPosition();
         this.npcs.forEach(npc => npc.logPosition());
     }
@@ -33,8 +40,9 @@ module.exports = class Game {
     }
 
     start(){
+        console.reset()
         let interval = setInterval( () => {
-            console.log('Turn starts')
+            console.reset()
             this.changeNpcDirections();
             this.moveCharacters();
             this.logPositions();

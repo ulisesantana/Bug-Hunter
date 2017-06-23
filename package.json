@@ -1,0 +1,28 @@
+{
+  "name": "bug-hunter",
+  "version": "1.0.0",
+  "description": "Just a command line game as proof of concept of Node.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ulisesantana/Bug-Hunter.git"
+  },
+  "keywords": [
+    "node",
+    "game",
+    "command",
+    "line"
+  ],
+  "author": "Ulises Santana <ulisesantana@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ulisesantana/Bug-Hunter/issues"
+  },
+  "homepage": "https://github.com/ulisesantana/Bug-Hunter#readme",
+  "dependencies": {
+    "cli-table": "^0.3.1"
+  }
+}

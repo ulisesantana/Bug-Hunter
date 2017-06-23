@@ -1,3 +1,5 @@
+const settings = require('./../settings');
+
 module.exports = class Character {
     constructor(id, name, x, y){
         if( new.target === Character){
@@ -23,9 +25,9 @@ module.exports = class Character {
         this.x += this.dx;
         this.y += this.dy;
         if(this.x < 0) this.x = 0;
-        if(this.x > 9) this.x = 9;
+        if(this.x > settings.sizeOfMap-1) this.x = settings.sizeOfMap-1;
         if(this.y < 0) this.y = 0;
-        if(this.y > 9) this.y = 9;
+        if(this.y > settings.sizeOfMap-1) this.y = settings.sizeOfMap-1;
     }
 
     logPosition(){

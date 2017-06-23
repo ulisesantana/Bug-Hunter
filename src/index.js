@@ -1,7 +1,8 @@
-const Game = require('./Game');
+const Game = require('./game/Game');
 const readline = require('readline');
+const settings = require('./settings');
 
-const game = new Game('Bug Hunter', 5);
+const game = new Game(settings.heroName, settings.numberOfBugs);
 
 const rl = readline.createInterface({
   input: process.stdin,
