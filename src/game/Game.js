@@ -31,8 +31,6 @@ module.exports = class Game {
         let allCharacters = JSON.parse(JSON.stringify(this.npcs)); //Deep Clone
         allCharacters.push(this.player);
         this.render(allCharacters);
-        this.player.logPosition();
-        this.npcs.forEach(npc => npc.logPosition());
     }
 
     processCollisions(){
