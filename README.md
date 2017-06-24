@@ -1,6 +1,6 @@
 # Bug Hunter
 
-This is just a command line game as proof of concept of Node.js working with the command line.
+This is just a command line game as proof of concept of Node.js working with the command line. For play just clone the repo and run `npm i && npm start`.
 
 The goal of the game is very simple, you are a Bug Hunter and you must kill all the bugs in the map. You are the `H` in the map and on every cell the number of bugs inside are shown.  
 
@@ -17,3 +17,5 @@ You kill a bug when you're in the same cell on the map.
 And you win when you kill the last bug.
 
 ![](docs/win.png)
+
+
